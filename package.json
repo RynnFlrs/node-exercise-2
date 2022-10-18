@@ -1,0 +1,28 @@
+{
+  "name": "exercise-2",
+  "version": "1.0.0",
+  "description": "Create a command-line program that implements CRUD using a CSV file as a data source.",
+  "main": "bio.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RynnFlrs/node-exercise-2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RynnFlrs/node-exercise-2/issues"
+  },
+  "homepage": "https://github.com/RynnFlrs/node-exercise-2#readme",
+  "devDependencies": {
+    "eslint": "^8.25.0",
+    "eslint-config-airbnb": "^19.0.4"
+  },
+  "dependencies": {
+    "csvjson": "^5.1.0",
+    "yargs": "^17.6.0"
+  }
+}
