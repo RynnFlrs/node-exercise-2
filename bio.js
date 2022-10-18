@@ -105,9 +105,9 @@ const updateFlag = (inputName, objectContent, path) => {
       updateElement.height = height
       updateElement.weight = weight
     }
-    const foundAtIndex = objectContent.indexOf(foundPerson)
-    objectContent.splice(foundAtIndex, 1, updateElement)
-    writeCSV(path, objectContent)
+    const updatedContent = objectContent.filter((person) => person !== foundPerson)
+    updatedContent.push(updateElement)
+    writeCSV(path, updatedContent)
     console.log(`Updated biostats.csv file.\nAdded Bio:\nName: ${updateElement.name}\nSex: ${updateElement.sex}\nAge: ${updateElement.age}\nHeight: ${updateElement.height} inchs\nWeight: ${updateElement.weight} lbs`)
   } else {
     console.log(`${inputName} not found`)
@@ -122,9 +122,9 @@ const deleteFlag = (inputName, objectContent, path) => {
     process.exit(1)
   } else if ((isNamePresent(inputName, objectContent)).first === true) {
     const foundPerson = (isNamePresent(inputName, objectContent)).second
-    objectContent.splice(foundPerson, 1)
+    const deletedContent = objectContent.filter((person) => person !== foundPerson)
     console.log(`Successfuly Deleted Bio Stats of ${name}`)
-    writeCSV(path, objectContent)
+    writeCSV(path, deletedContent)
   } else {
     console.log(`${name} not Found.`)
   }
